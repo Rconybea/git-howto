@@ -1,0 +1,13 @@
+$ git config --global user.name "Roland Conybeare"
+$ git config --global user.email "rconybeare@gmail.com"
+# (next two linux/mac only)
+$ git config --global core.autocrlf input
+$ git config --global core.safecrlf true
+# create empty repo
+$ git init
+# add hello.html
+$ git add hello.html
+$ git commit -m "1st commit"
+# check repo status
+$ git status
+
