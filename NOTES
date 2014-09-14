@@ -10,4 +10,21 @@ $ git add hello.html
 $ git commit -m "1st commit"
 # check repo status
 $ git status
+# check change history
+$ git log --pretty=oneline
+$ git log --pretty=oneline --since='5sep2014'
+$ git log --pretty=oneline --since='30 minutes ago'
+$ git log --pretty=oneline --until='5 days ago'
+$ git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
+$ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+# setup git aliases in ~/.gitconfif
+..
+[alias]
+  co = checkout
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]" --graph --date=short
+  ..
+# setup bash aliases in ~/.profile
+# make sandbox point to old version (use "git log.." to find hashes)
+$ git checkout <hash>
+
 
