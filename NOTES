@@ -23,7 +23,11 @@ $ git commit -m "1st commit"
 $ git branch -M main
 
 # push to github
+# easy method (but will have to enter username/password over-and-over..
 $ git remote add origin https://github.com/Rconybea/git-howto.git
+# hard method (requires SSH key on github + ssh-agent running locally)
+$ git remote add origin git@github.com
+# push to remote
 $ git push -u origin main
 
 # check repo status
