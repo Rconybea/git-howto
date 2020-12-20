@@ -1,8 +1,18 @@
+# configuration
 $ git config --global user.name "Roland Conybeare"
 $ git config --global user.email "rconybeare@gmail.com"
 # (next two linux/mac only)
 $ git config --global core.autocrlf input
 $ git config --global core.safecrlf true
+
+# make SSH keypair
+$ ssh-keygen -t ed25519 -C "ronybeare@gmail.com"
+
+# start SSH agent (if not running already)
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_ed25519
+$ xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+# goto SSH keys page on github,  paste clipboard to "ssh key",  then "Add SSH key"
 
 # create empty repo
 $ git init
