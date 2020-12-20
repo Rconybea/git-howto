@@ -3,13 +3,22 @@ $ git config --global user.email "rconybeare@gmail.com"
 # (next two linux/mac only)
 $ git config --global core.autocrlf input
 $ git config --global core.safecrlf true
+
 # create empty repo
 $ git init
+
 # add hello.html
 $ git add hello.html
 $ git commit -m "1st commit"
+$ git branch -M main
+
+# push to github
+$ git remote add origin https://github.com/Rconybea/git-howto.git
+$ git push -u origin main
+
 # check repo status
 $ git status
+
 # check change history
 $ git log --pretty=oneline
 $ git log --pretty=oneline --since='5sep2014'
@@ -17,14 +26,31 @@ $ git log --pretty=oneline --since='30 minutes ago'
 $ git log --pretty=oneline --until='5 days ago'
 $ git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago'
 $ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+
 # setup git aliases in ~/.gitconfif
 ..
 [alias]
   co = checkout
   hist = log --pretty=format:\"%h %ad | %s%d [%an]" --graph --date=short
   ..
+
 # setup bash aliases in ~/.profile
+
 # make sandbox point to old version (use "git log.." to find hashes)
 $ git checkout <hash>
 
+# name a revision
+$ git tag <tagname>
 
+# fetch new revisions from elsewheere
+$ git remote add $alias $url
+$ git fetch $alias
+# merge from a branch
+$ git merge $alias/$branch
+# push to remote
+$ git push $alias $branch
+
+# save current state to switch branches
+$ git stash        # cf: $ hg shelve
+$ git stash list   # cf: $ hg shelve -l
+$ git stash pop    # cf: $ hg unshelve
